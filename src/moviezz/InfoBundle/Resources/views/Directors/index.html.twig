@@ -1,0 +1,26 @@
+{% extends 'moviezzInfoBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Directors{% endblock %}
+
+{% block body %}
+
+    <h1>Movie directors index !</h1>
+
+
+    <ul>
+        {% for director in directorList %}
+
+            <li><a href="{{ path('display_director', {'id': director.id}) }}">{{ director.name }}</a></li>
+
+        {% else %} <li>No movies known.</li>
+
+        {% endfor %}
+    </ul>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Alias amet consectetur eius esse natus repellat ut.
+        Dolore ducimus eum expedita id illo non ééé
+    </p>
+
+{% endblock %}

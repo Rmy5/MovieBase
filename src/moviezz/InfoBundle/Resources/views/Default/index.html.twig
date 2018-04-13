@@ -1,0 +1,14 @@
+{% extends 'moviezzInfoBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Main {% endblock %}
+
+{% block body %}
+
+    <h1>Welcome to the moviezz</h1>
+    <span>Browse <a href="{{ path('display_directors') }}">directors</a>.</span><br>
+
+    {% for message in app.session.flashbag.get('info') %}
+        <p>Message flash : {{ message }}</p>
+    {% endfor %}
+
+{% endblock %}

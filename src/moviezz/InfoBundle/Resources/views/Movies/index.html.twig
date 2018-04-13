@@ -1,0 +1,22 @@
+{% extends 'moviezzInfoBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Index{% endblock %}
+
+{% block body %}
+
+    <h1>The movies :</h1>
+    <span>Director id : {{ id }}</span><br>
+    <span>Format : {{ _format }}</span><br>
+    <span>Tag : {{ tag }}</span>
+
+    <ul>
+        {% for movie in movieList %}
+
+                <li><a href="{{ path('display_movie', {'id': movie.id}) }}">{{ movie.name }}</a></li>
+
+        {% else %} <li>No movies known.</li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}

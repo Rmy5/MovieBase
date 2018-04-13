@@ -1,0 +1,22 @@
+{% extends 'moviezzInfoBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - {{ name }}{% endblock %}
+
+{% block body %}
+
+    <h1>{{ name }}</h1>
+
+    <p>Réalisé en 1958</p>
+
+    {% if rating >= 12 %}
+        Film interdit aux moins de 12 ans.
+
+    {% elseif rating >= 18 %}
+        Film interdit aux moins de 18 ans.
+
+    {% elseif rating == 'all' %}
+        Film tout public.
+
+    {% endif %}
+
+{% endblock %}

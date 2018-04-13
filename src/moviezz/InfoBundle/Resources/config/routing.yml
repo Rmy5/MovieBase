@@ -1,0 +1,23 @@
+index:
+   path: /
+   defaults: { _controller: moviezzInfoBundle:Default:index }
+
+display_directors:
+    path:     /directors
+    defaults: { _controller: moviezzInfoBundle:Directors:index }
+
+display_director:
+    path:     /director/{id}.{_format}
+    defaults:
+        _controller: moviezzInfoBundle:Movies:view
+        _format:      html
+    requirements:
+        id:     \d*
+        _format: \w{3,4}
+
+display_movie:
+    path:     /movie/{id}
+    defaults:
+        _controller: moviezzInfoBundle:Movies:info
+    requirements:
+        id:     \d*

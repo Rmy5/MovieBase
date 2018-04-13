@@ -1,0 +1,3 @@
+moviezz_info:
+    resource: "@moviezzInfoBundle/Resources/config/routing.yml"
+    prefix:   /browse
